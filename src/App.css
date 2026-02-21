@@ -1,0 +1,90 @@
+/* shadow style */
+.shadow-top-sides {
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-right-sides {
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-bottom-sides {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-left-sides {
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* scroll bar styling   */
+#root::-webkit-scrollbar {
+  width: 5px;
+}
+
+#root::-webkit-scrollbar-track {
+  background: #f58327;
+  border-radius: 8px;
+}
+
+#root::-webkit-scrollbar-thumb {
+  background: #f58327;
+  border-radius: 12px;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #242322;
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #f58327;
+  border-radius: 12px;
+}
+
+.active {
+  color: #ebbd33;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.style-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+.style-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.style-scroll-thin::-webkit-scrollbar {
+  width: 2px;
+}
+.style-scroll-medium::-webkit-scrollbar {
+  width: 5px;
+}
+
+.style-scroll::-webkit-scrollbar-track {
+  background: #f58327;
+  border-radius: 4px;
+}
+
+.style-scroll::-webkit-scrollbar-thumb {
+  background: #f58327;
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  transition: all ease-in 200ms;
+}
+
+/* App.css */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}

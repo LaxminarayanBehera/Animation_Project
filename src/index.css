@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent;
+}
+
+#bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: url("/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translateZ(0);
+}
+
+/* light gradient overlay */
+#bg-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to center,
+    rgba(2, 0, 0, 0.15) 100%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  pointer-events: none;
+}
+
+:root {
+  --framer-font-family: "Unbounded", "Unbounded Placeholder", sans-serif;
+  --framer-font-family-bold: "Unbounded", "Unbounded Placeholder", sans-serif;
+}
+
+body {
+  font-family: var(--framer-font-family);
+}
