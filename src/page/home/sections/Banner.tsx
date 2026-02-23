@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import Button from "../../../components/ui/button/Button";
+import Lottie from "lottie-react";
+import Announcement from "../../../assets/lottie/Colored Announcement.json";
 
 const Banner = () => {
   return (
@@ -41,10 +43,11 @@ const Banner = () => {
           </span>
 
           <span className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-[#f97316] text-3xl md:text-4xl lg:text-5xl shrink-0">
-            <img
-              src="./marketing.png"
-              alt="image"
-              className="h-12 md:h-18 w-fit object-center object-contain "
+            <Lottie
+              animationData={Announcement}
+              loop
+              autoplay
+              style={{ width: "100%", height: "100%" }}
             />
           </span>
 

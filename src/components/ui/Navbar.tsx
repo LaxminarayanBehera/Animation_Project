@@ -1,5 +1,4 @@
 import { GoArrowUpRight } from "react-icons/go";
-
 import { TbMenu } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
 import { Fragment, useEffect, useRef, useState } from "react";
@@ -62,7 +61,7 @@ const Navbar = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={clsx(
           "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
-          scrolled || mobileOpen ? "backdrop-blur-2xl" : "backdrop-blur-2xl",
+          scrolled || mobileOpen ? "" : "",
         )}
       >
         <div className="w-full mx-auto px-6 lg:px-12">
@@ -81,7 +80,6 @@ const Navbar = () => {
                   if (item.hasDropdown) {
                     return (
                       <Fragment key={`nav-${index}`}>
-                        {/* ✅ FIX: wrapper div uses flex + items-center so it matches sibling Link height */}
                         <div
                           className="relative flex items-center"
                           onMouseEnter={handleMouseEnter}
@@ -108,8 +106,8 @@ const Navbar = () => {
                       to={item.link}
                       className={clsx(
                         "px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-200",
-                        index === 0
-                          ? "text-[#f97316] bg-white/5"
+                        location.pathname === item.link
+                          ? "text-[#f97316] bg-white/5 border"
                           : "text-white hover:text-[#F58327] hover:bg-white/5",
                       )}
                     >

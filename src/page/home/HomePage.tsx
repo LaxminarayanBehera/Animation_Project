@@ -1,6 +1,6 @@
 import Banner from "./sections/Banner";
+import Brands from "./sections/Brands";
 import CardAnimation from "./sections/CardAnimation";
-import InfinityScroll from "./sections/InfinityScroll";
 import ScrollAnimation from "./sections/ScrollAnimation";
 
 const HomePage = () => {
@@ -11,8 +11,8 @@ const HomePage = () => {
         <ScrollAnimation />
         <CardAnimation />
       </div>
-      <div className="container  mx-auto w-full h-screen bg-[#0a0a0a] text-white flex justify-center items-center overflow-x-hidden">
-        <InfinityScroll />
+      <div className="container mx-auto w-full  bg-[#0a0a0a] text-white flex justify-center items-center overflow-x-hidden">
+        <Brands />
       </div>
     </>
   );

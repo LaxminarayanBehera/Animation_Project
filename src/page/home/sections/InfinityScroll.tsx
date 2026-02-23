@@ -18,8 +18,11 @@ const InfinityScroll = () => {
   ];
 
   return (
-    <div className="container mx-auto">
-      <div className="flex ">
+    <div className="relative w-full overflow-hidden">
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-linear-to-r from-[#050000] to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-linear-to-l from-[#0a0a0a] to-transparent z-10" />
+
+      <div className="flex h-20 items-center">
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
@@ -30,7 +33,8 @@ const InfinityScroll = () => {
             <img
               key={index}
               src={image}
-              className="w-40 h-40 object-center object-contain pr-10"
+              className="w-[20%] h-14 object-contain pr-10"
+              alt="brand"
             />
           ))}
         </motion.div>
@@ -45,7 +49,8 @@ const InfinityScroll = () => {
             <img
               key={index}
               src={image}
-              className="w-40 h-40 object-center object-contain pr-10"
+              className="w-[20%] h-14 object-contain pr-10"
+              alt="brand"
             />
           ))}
         </motion.div>
