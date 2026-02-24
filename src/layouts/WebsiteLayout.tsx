@@ -21,7 +21,7 @@ const WebsiteLayout = () => {
       <div className="hidden md:flex">
         <ScrollControl />
       </div>
-      <div className="fixed bottom-4 right-4">
+      <div className="fixed hidden md:bottom-4 right-4">
         <MusicButton />
       </div>
     </>
