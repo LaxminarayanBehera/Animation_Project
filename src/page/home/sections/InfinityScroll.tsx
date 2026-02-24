@@ -26,7 +26,7 @@ const InfinityScroll = () => {
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           className="flex shrink-0"
         >
           {imagesMarque.map((image, index) => (
@@ -42,7 +42,7 @@ const InfinityScroll = () => {
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           className="flex shrink-0"
         >
           {imagesMarque.map((image, index) => (

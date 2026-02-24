@@ -45,9 +45,7 @@ const ProjectCard = ({
 
       <div className="absolute inset-0 backdrop-blur-sm to-black/40" />
 
-      {/* ── LEFT SIDEBAR ── description + counter + heading */}
       <div className="relative z-10 flex flex-col justify-between p-8 w-64 shrink-0">
-        {/* Description top-left */}
         <p
           className="text-white/70 text-sm leading-relaxed"
           style={{ fontFamily: "'Georgia', serif" }}
@@ -55,7 +53,6 @@ const ProjectCard = ({
           {description}
         </p>
 
-        {/* Counter + Heading bottom-left */}
         <div>
           <p
             className="text-white/60 text-sm mb-2 tracking-widest"
@@ -73,18 +70,14 @@ const ProjectCard = ({
         </div>
       </div>
 
-      {/* ── CENTER — takes up remaining space (image shows through) ── */}
       <div className="flex-1" />
       <div>
         <img src={image} alt="" />
       </div>
-
-      {/* ── RIGHT SIDEBAR ── meta info */}
       <div
         className="relative z-10 flex flex-col justify-start gap-8 p-8 w-56 shrink-0"
         style={{ paddingTop: "2.5rem" }}
       >
-        {/* Year */}
         <div>
           <p
             className="text-white/50 text-xs uppercase tracking-widest mb-1"
@@ -100,7 +93,6 @@ const ProjectCard = ({
           </p>
         </div>
 
-        {/* Role */}
         <div>
           <p
             className="text-white/50 text-xs uppercase tracking-widest mb-1"
@@ -116,7 +108,6 @@ const ProjectCard = ({
           </p>
         </div>
 
-        {/* Services */}
         {services.length > 0 && (
           <div>
             <p
