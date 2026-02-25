@@ -1,4 +1,4 @@
-import CardDetails from "../home/sections/CardDetails";
+import CardDetails from "./sections/CardDetails";
 import Section1 from "./sections/Section1";
 
 const AboutPage = () => {

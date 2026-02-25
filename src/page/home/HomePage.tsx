@@ -1,3 +1,6 @@
+import BlogPage from "../blog/BlogPage";
+import DrawSvg from "../svg/DrawSvg";
+import SvgAnimation from "../svg/SvgAnimation";
 import Banner from "./sections/Banner";
 import Brands from "./sections/Brands";
 import CardAnimation from "./sections/CardAnimation";
@@ -14,6 +17,9 @@ const HomePage = () => {
       <div className="container mx-auto w-full  bg-[#0a0a0a] text-white flex justify-center items-center overflow-x-hidden">
         <Brands />
       </div>
+      <DrawSvg />
+      <BlogPage />
+      <SvgAnimation />
     </>
   );
 };

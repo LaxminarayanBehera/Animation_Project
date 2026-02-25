@@ -21,7 +21,6 @@ body {
   transform: translateZ(0);
 }
 
-/* light gradient overlay */
 #bg-layer::before {
   content: "";
   position: absolute;
@@ -44,4 +43,8 @@ body {
 
 body {
   font-family: var(--framer-font-family);
+}
+
+body::selection {
+  background-color: #d38147;
 }

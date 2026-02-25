@@ -2,15 +2,11 @@ import { motion } from "motion/react";
 import Button from "../../../components/ui/button/Button";
 import Lottie from "lottie-react";
 import Announcement from "../../../assets/lottie/Colored Announcement.json";
-import { MusicButton } from "../../../components/ui/button/MusicButton";
 
 const Banner = () => {
   return (
     <section className="relative min-h-screen  flex items-center justify-center overflow-hidden px-4">
       <div className="flex flex-col justify-center items-center z-10 text-center max-w-5xl mx-auto">
-        <div className="md:hidden">
-          <MusicButton />
-        </div>
         <motion.div
           initial={{ x: -120, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
