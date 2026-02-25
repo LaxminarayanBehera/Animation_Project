@@ -29,7 +29,7 @@ const CardDetails = () => {
     },
   ];
   return (
-    <div className="w-full grid grid-cols-3 gap-5">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
       {details.map((items, index) => (
         <Card
           key={index}

@@ -30,7 +30,7 @@ const Blogs = () => {
     },
   ];
   return (
-    <div className="w-full grid grid-cols-3 gap-5">
+    <div className="w-full grid-cols-1 grid md:grid-cols-3 gap-5">
       {details.map((items, index) => (
         <BlogCard
           key={index}
