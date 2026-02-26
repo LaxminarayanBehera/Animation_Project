@@ -49,7 +49,7 @@ const BlogCard = ({ image, title, desc }: CardProps) => {
         <AnimatePresence>
           {isHover && (
             <motion.div
-              className="absolute inset-0 z-20 flex justify-center items-center pointer-events-none"
+              className="absolute inset-0 z-20 flex justify-center items-center cursor-pointer"
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.6 }}
@@ -60,7 +60,7 @@ const BlogCard = ({ image, title, desc }: CardProps) => {
         </AnimatePresence>
 
         <motion.div
-          whileHover={{ rotateZ: -5 }}
+          animate={{ rotateZ: isHover ? -5 : 0 }}
           transition={{ type: "spring", stiffness: 180, damping: 18 }}
           className="absolute inset-0 rounded-2xl bg-[#e4ddd9] overflow-hidden"
         >

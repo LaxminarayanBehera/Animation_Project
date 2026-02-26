@@ -3,10 +3,12 @@ import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 import { MusicButton } from "../components/ui/button/MusicButton";
 import ScrollControl from "../hooks/ScrollControl";
+import ScrollToTop from "../hooks/scrollToTop";
 
 const WebsiteLayout = () => {
   return (
     <>
+      <ScrollToTop />
       <header className="min-h-15 h-17.5 z-999 w-full">
         <Navbar />
       </header>

@@ -72,7 +72,7 @@ const Banner = () => {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
           className="flex justify-center"
         >
-          <Button className="">Get in Touch</Button>
+          <Button className="">Let’s Go</Button>
         </motion.div>
       </div>
     </section>
