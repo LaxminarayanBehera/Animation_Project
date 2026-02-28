@@ -67,11 +67,11 @@ const MarqueeTrack = ({
 const DoubleScroll = () => {
   return (
     <div
-      className="relative w-full overflow-hidden"
+      className="relative w-full "
       style={{ height: "300px", background: "transparent" }}
     >
       <div
-        className="absolute w-[140%] flex items-center bg-[#F58327] overflow-hidden"
+        className="absolute w-[140%] flex items-center bg-[#F58327]  overflow-hidden"
         style={{
           height: "64px",
           top: "50px",
@@ -85,7 +85,7 @@ const DoubleScroll = () => {
       </div>
 
       <div
-        className="absolute w-[140%] flex items-center bg-[#0f0f0f] overflow-hidden"
+        className="absolute w-[140%] flex items-center bg-[#0f0f0f] border-t  border-b border-t-[#F58327] border-b-[#F58327] overflow-hidden"
         style={{
           height: "64px",
           top: "130px",

@@ -5,6 +5,7 @@ import Banner from "./sections/Banner";
 import Brands from "./sections/Brands";
 import CardAnimation from "./sections/CardAnimation";
 import ScrollAnimation from "./sections/ScrollAnimation";
+import AnimationPage from "../animation/AnimationPage";
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <DrawSvg />
       <BlogPage />
       <SvgAnimation />
+      <AnimationPage />
     </>
   );
 };

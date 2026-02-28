@@ -51,7 +51,7 @@ const Footer = ({
   ];
 
   return (
-    <footer className="w-full bg-[#0a0a0a]">
+    <footer className="w-full bg-[#0a0a0a] border-t border-t-[#F58327]">
       <div className="relative flex flex-col items-center justify-center px-6 pt-24 pb-20 text-center">
         <h2
           className="text-white font-bold leading-tight mb-5 max-w-2xl"
@@ -67,25 +67,25 @@ const Footer = ({
           {subheadline}
         </p>
 
-        <div className="flex items-center w-full max-w-115 bg-white/10 border border-white/10 rounded-full pl-6 pr-1.5 py-1.5 gap-2">
+        <div className="flex items-center w-full max-w-115 bg-white/10 border border-white/10 rounded-full px-4 md:pr-2 pl-4 py-1.5 gap-2">
           <input
             type="email"
             placeholder="Email Address"
-            className="flex-1 bg-transparent border-none outline-none text-white text-[0.95rem] placeholder-white/40"
+            className="flex-1 bg-transparent border-none outline-none text-white text-sm placeholder-white/40"
           />
 
-          <button className="bg-[#F58327] hover:bg-[#d9721e] text-white rounded-full px-6 py-2.5 text-sm font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer border-none">
+          <button className="bg-[#F58327] hover:bg-[#d9721e] text-white rounded-full py-2 px-2.5 md:px-6 md:py-2.5 text-sm font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer border-none">
             Subscribe
-          </button> 
+          </button>
         </div>
       </div>
 
-      <DoubleScroll/>
+      <DoubleScroll />
 
       <div className="h-px bg-white/[0.07] mx-10" />
 
-      <div className="grid grid-cols-3 items-start gap-8 px-10 py-12">
-        <div>
+      <div className="grid grid-cols-2 md:grid-cols-3 items-start gap-2 md:gap-8 px-4 md:px-10 py-12">
+        <div className="w-full flex flex-col justify-center">
           <p className="text-white/35 text-[0.7rem] tracking-[0.12em] uppercase mb-5 font-medium">
             Company
           </p>
@@ -103,7 +103,7 @@ const Footer = ({
           </ul>
         </div>
 
-        <div>
+        <div className="w-full flex flex-col justify-center">
           <p className="text-white/35 text-[0.7rem] tracking-[0.12em] uppercase mb-5 font-medium">
             Contact
           </p>
@@ -114,13 +114,13 @@ const Footer = ({
           </p>
           <a
             href={`mailto:${contactEmail}`}
-            className="text-white/75 hover:text-[#F58327] text-sm no-underline transition-colors duration-200"
+            className="text-white/75 hover:text-[#F58327] text-sm no-underline transition-colors duration-200 break-all"
           >
             {contactEmail}
           </a>
         </div>
 
-        <div className="flex flex-col items-end justify-between h-full gap-8">
+        <div className="hidden md:flex flex-col items-end justify-between h-full gap-8">
           <Button
             onClick={handleBackToTop}
             className="w-full flex items-center justify-center gap-2"
@@ -144,7 +144,30 @@ const Footer = ({
         </div>
       </div>
 
-      <div className="border-t border-white/[0.07] px-10 py-5 flex justify-between items-center">
+      <div className="md:hidden flex flex-col items-center justify-center h-full pb-5 gap-8">
+        <Button
+          onClick={handleBackToTop}
+          className="w-full flex items-center justify-center gap-2"
+        >
+          <span>Back to Top</span>
+          <MdArrowOutward size={16} className="-rotate-45 shrink-0" />
+        </Button>
+
+        <div className="flex gap-2.5">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              aria-label={social.label}
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/10 text-white/65 no-underline transition-all duration-200 hover:bg-[#F58327] hover:text-white hover:border-[#F58327]"
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t border-white/[0.07] px-10 py-5 flex flex-col md:flex-row gap-4 justify-between items-center">
         <p className="text-white/25 text-xs flex items-center gap-1">
           <FaCopyright /> {new Date().getFullYear()} {contactName}. All rights
           reserved.

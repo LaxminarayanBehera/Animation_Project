@@ -1,10 +1,10 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/ui/Navbar";
-import Footer from "../components/ui/Footer";
 import { MusicButton } from "../components/ui/button/MusicButton";
 import ScrollControl from "../hooks/ScrollControl";
-import ScrollToTop from "../hooks/scrollToTop";
-
+import ScrollToTop from "../hooks/ScrollToTop";
+import Footer from "../components/ui/Footer";
+import FaqPage from "../page/faq/FaqPage";
 const WebsiteLayout = () => {
   return (
     <>
@@ -17,7 +17,8 @@ const WebsiteLayout = () => {
         <Outlet />
       </main>
 
-      <footer className="w-full h-auto">
+      <footer className="w-full h-auto overflow-x-hidden">
+        <FaqPage />
         <Footer />
       </footer>
       <div className="hidden md:flex">
