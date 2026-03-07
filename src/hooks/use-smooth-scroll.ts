@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 type Props = {
   shouldEnableLenis?: boolean;
   lenisOptions?: LenisOptions;
-  autoInit?: boolean; // Whether to auto-initialize on mount
+  autoInit?: boolean;
 };
 
 export default function useSmoothScroll({
@@ -50,8 +50,10 @@ export default function useSmoothScroll({
         : document.body;
       const lenis = new Lenis({
         allowNestedScroll: true,
+        lerp: 0.05,
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        // easing: (t) => t * (2 - t),
         smoothWheel: true,
         // syncTouch: true,
         ...lenisOptions,
@@ -73,7 +75,7 @@ export default function useSmoothScroll({
       setIsInitialized(true);
       return lenis;
     },
-    [shouldEnableLenis, lenisOptions]
+    [shouldEnableLenis, lenisOptions],
   );
   useEffect(() => {
     if (autoInit && shouldEnableLenis) {
@@ -87,7 +89,7 @@ export default function useSmoothScroll({
       const id = instanceId || `instance_${Date.now()}`;
       return initLenis(target, id);
     },
-    [initLenis]
+    [initLenis],
   );
 
   const removeInstance = useCallback((instanceId: string) => {
@@ -133,7 +135,7 @@ export default function useSmoothScroll({
 
 export function useScrollerProxyUpdate(
   containerEl: RefObject<HTMLDivElement | null> | null,
-  lenisInstance: Lenis | null
+  lenisInstance: Lenis | null,
 ) {
   if (!lenisInstance || !containerEl?.current) {
     return;

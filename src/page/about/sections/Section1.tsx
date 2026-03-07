@@ -1,7 +1,7 @@
 const Section1 = () => {
   return (
     <div className="w-full h-screen text-white flex justify-center items-center">
-      <div className="w-full flex flex-col gap-10 justify-center items-center">
+      <div className="w-full flex flex-col gap-10 justify-center items-center max-w-6xl">
         <h1 className="text-5xl font-semibold text-white">Coming Soon</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odio

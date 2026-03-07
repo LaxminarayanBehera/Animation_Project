@@ -9,51 +9,63 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CombineSection = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const boxRef1 = useRef<HTMLDivElement | null>(null);
-  const boxRef2 = useRef<HTMLDivElement | null>(null);
+  const faqRef = useRef<HTMLDivElement | null>(null);
+  const footerRef = useRef<HTMLDivElement | null>(null);
+  const footerWrapRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const section = sectionRef.current!;
-    const box1 = boxRef1.current!;
-    const box2 = boxRef2.current!;
+    const faq = faqRef.current!;
+    const footer = footerRef.current!;
+    const footerWrap = footerWrapRef.current!;
 
-    if (!section || !box1 || !box2) return;
+    if (!section || !faq || !footer || !footerWrap) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=500%",
-        scrub: true,
+        end: () => `+=${footerWrap.offsetHeight + window.innerHeight}`,
+        scrub: 1,
         pin: true,
         pinSpacing: true,
-        // markers: true,
       },
     });
 
-    tl.to(box1, {
-      //   scale: 0.94,
-      opacity: 0.6,
+    tl.to(faq, {
+      scale: 0.95,
+      opacity: 0.3,
       ease: "none",
+      duration: 0.4,
     });
 
-    tl.fromTo(box2, { y: "100%" }, { y: "0%", ease: "none" });
+    tl.fromTo(
+      footerRef.current,
+      { clipPath: "inset(100% 0% 0% 0%)" },
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        ease: "none",
+        duration: 1,
+      },
+      "<",
+    );
   });
 
   return (
-    <div
-      ref={sectionRef}
-      className="w-full h-screen flex items-center justify-center"
-    >
-      <div className="relative w-full h-full p-2 flex items-center justify-center overflow-hidden">
-        <div ref={boxRef1}>
-          <FaqPage />
-        </div>
+    <div ref={sectionRef} className="w-full h-screen relative overflow-hidden">
+      <div
+        ref={faqRef}
+        className="absolute inset-0 z-10 bg-[#0a0a0a] overflow-hidden"
+      >
+        <FaqPage />
+      </div>
 
-        <div
-          ref={boxRef2}
-          className="absolute inset-2.5 rounded-3xl bg-linear-to-br from-cyan-500 via-cyan-600 to-cyan-800 z-20 translate-y-full"
-        >
+      <div
+        ref={footerRef}
+        className="absolute inset-0 z-20 bg-[#0a0a0a] overflow-y-auto"
+        style={{ clipPath: "inset(100% 0% 0% 0%)" }}
+      >
+        <div ref={footerWrapRef}>
           <Footer />
         </div>
       </div>
